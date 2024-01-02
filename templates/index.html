@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App for House Price Prediction</title>
+</head>
+<body>
+    <h1>House Price Prediction</h1>
+
+    <form method="post" action="/predict">
+        <label>No of Bedrooms</label>
+        <input type="number" name="bedrooms"><br><br>
+
+        <label>No of Bathrooms</label>
+        <input type="number" name="bathrooms"><br><br>
+
+        <label>Location</label>
+        <select name="location">
+            <option value="0">Benz Circle</option>
+            <option value="1">Enikepadu</option>
+            <option value="2">Gannavaram</option>
+            <option value="3">Gollapudi</option>
+            <option value="4">Gunadala</option>
+            <option value="5">Kankipadu</option>
+            <option value="6">Payakapuram</option>
+            <option value="7">Penamaluru</option>
+            <option value="8">Poranki</option>
+            <option value="9">Rajarajeswari Peta</option>
+            <option value="10">Vidhyadharpuram</option>
+        </select><br><br>
+
+        <label>Area (in sqft)</label>
+        <input type="number" name="area"><br><br>
+
+        <label>Property Status</label>
+        <select name="status">
+            <option value="0">New</option>
+            <option value="1">Ready to move</option>
+            <option value="2">Resale</option>
+            <option value="3">Under Construction</option>
+        </select><br><br>
+
+        <label>Direction of Facing</label>
+        <select name="facing">
+            <option value="0">Not Mentioned</option>
+            <option value="1">East</option>
+            <option value="2">NorthEast</option>
+            <option value="3">West</option>
+        </select><br><br>
+
+        <label>Type of Property</label>
+        <select name="type">
+            <option value="0">Apartment</option>
+            <option value="1">Independent Floor</option>
+            <option value="2">Independent House</option>
+            <option value="3">Residential Plot</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+        
+    </form>
+
+    <h2> House Price Prediction Result </h2>
+    <p> Predicted House Price : ₹ {{ prediction }} Lakhs</p>
+</body>
+</html>
