@@ -4,17 +4,17 @@ import pickle
 import numpy as np
 
 # Create an object for Flask
-app = Flask(__name__)
+application = Flask(__name__)
 
 # First let's open pickle file
 with open('House_Price.pkl', 'rb') as f:
     model = pickle.load(f)
 
-@app.route('/', methods = ['GET'])
+@application.route('/', methods = ['GET'])
 def home():
     return render_template('index.html')
 
-@app.route('/predict', methods = ['POST'])
+@application.route('/predict', methods = ['POST'])
 def predict():
     Rooms = int(request.form['bedrooms'])
     Bathrooms = int(request.form['bathrooms'])
@@ -33,4 +33,4 @@ def predict():
     # Now pass the above predicted data to the template
     return render_template('index.html', prediction = prediction)
 
-app.run()
+application.run()
